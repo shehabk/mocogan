@@ -21,10 +21,10 @@ Options:
 
 import os
 import docopt
-import torch
+
 
 from trainers import videos_to_numpy
-
+import torch
 import subprocess as sp
 
 
@@ -50,6 +50,9 @@ if __name__ == "__main__":
     args = docopt.docopt(__doc__)
 
     generator = torch.load(args["<model>"], map_location={'cuda:0': 'cpu'})
+    # added this line to get rid of some errors.
+    if torch.cuda.is_available():
+        generator.cuda()
     generator.eval()
     num_videos = int(args['--num_videos'])
     output_folder = args['<output_folder>']

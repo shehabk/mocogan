@@ -1,0 +1,5 @@
+Training:
+
+
+Generate Videos:
+python generate_videos.py ../logs/actions/generator_00100.pytorch ../outputs/actions

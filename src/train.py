@@ -46,14 +46,14 @@ import docopt
 import PIL
 
 import functools
-
+from trainers import Trainer
 import torch
 from torch.utils.data import DataLoader
 from torchvision import transforms
 
 import models
 
-from trainers import Trainer
+
 
 import data
 
